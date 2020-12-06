@@ -3,6 +3,7 @@ import java.io.*;
 
 public class Recursion{
   
+  //Problem Set1: count8
   public static int count8(int N){
     int Num8;
     int intCount = 0;
@@ -16,18 +17,66 @@ public class Recursion{
     }else{
     }return 0;
   }
-  
-  /*public static String endX(String str){
-    String strWord;
-    String reverse;
-    if(strWord.equals(" ")){
-    return " ";
-    }else{
-    
-    }return reverse(strWord.substring(1) + strWord.substring(0));
+    //Problem Set2: pairStar (final/complete)
+    //base code
+    public static String pairStar(String word) {
+    if ( word == null ) 
+    return word;
+    return tailReverse(word, ""); 
+    }
+    //recursion code
+    public static String tailReverse(String word, String res) {
+ 	  //testing the deduction of word length
+    //System.out.println("Word Length is " + word.length());
+ 	  //System.out.println("Word is " + word);
 
+     //res = word bank
+ 	  if(word.equals("") )     
+     	// null is no String; "" is empty String
+     	return res;
+ 	  else if (word.length() == 1) {
+     res = res + word.charAt(0);
+     return res;
+ 	  }else
+   	  if (word.charAt(0) == word.charAt(1)){
+   		 	res = res + word.charAt(0)+"*";
+      	return tailReverse(word.substring(1, word.length()),res);
+       }else{
+       res  = res + word.charAt(0);
+       return tailReverse(word.substring(1, word.length()),res);
+       }
   }
 
+
+
+  //1st try of set2: pairStar (failed/wrong)
+  /*public static String pairStar(String str){
+    String Newstr;
+    String strX;
+    int wordCount = 0;
+    int intStr;
+    intStr = str.length() -2 ;
+    System.out.println("JJJJ"+intStr);
+    if(wordCount < intStr){
+      //str = str.substring(wordCount,wordCount +2);
+      if(str.substring(wordCount,wordCount +1).equalsIgnoreCase(str.substring(wordCount+1,wordCount +2))){
+        Newstr = str.substring(wordCount,wordCount +1)+"*";
+        System.out.println("io"+Newstr);
+      }else{
+        Newstr = str.substring(wordCount,wordCount +1);
+        System.out.println("hi"+Newstr);
+        
+      }
+      wordCount = wordCount +1;
+      System.out.println("wordcount"+wordCount);
+      return Newstr + pairStar(str);
+
+    }else{
+      //wordCount = 0;
+    }return str;
+
+  }
+*/
   /*public static String stringClean(String str){
 
   }*/
@@ -36,7 +85,14 @@ public class Recursion{
   public static void main(String[] args) throws IOException{
     BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
     int N;
-    N = Integer.parseInt(keyboard.readLine());
+    
+    //Problem Set1: count8
+    /*N = Integer.parseInt(keyboard.readLine());
     System.out.println(Recursion.count8(N));
+    */
+    //Problem Set2: pairStar
+    String wordIn;
+    wordIn = keyboard.readLine();
+    System.out.println(Recursion.pairStar(wordIn));
   }
 }
