@@ -17,6 +17,7 @@ public class Recursion{
     }else{
     }return 0;
   }
+  
     //Problem Set2: pairStar (final/complete)
     //base code
     public static String pairStar(String word) {
@@ -77,22 +78,56 @@ public class Recursion{
 
   }
 */
-  /*public static String stringClean(String str){
+  //Problem Set3: stringClean (finish/complete)
+  public static String stringClean(String word){
+    if ( word == null ) 
+    return word;
+    return Reverse(word, ""); 
+    }
+    //recursion code
+    public static String Reverse(String word, String res) {
+ 	  //testing the deduction of word length
+    System.out.println("Word Length is " + word.length());
+ 	  System.out.println("Word is " + word);
 
-  }*/
+     //res = word bank
+ 	    if(word.equals("") )     
+     	// null is no String; "" is empty String
+      	return res;
+ 	    else if (word.length() == 1) {
+      res = res + word.charAt(0);
+       return res;
+ 	    }else
+   	    if (word.charAt(0) == word.charAt(1)){
+      	  return Reverse(word.substring(1, word.length()),res);
+         }else{
+          res  = res + word.charAt(0);
+          return Reverse(word.substring(1, word.length()),res);
+       }
+  }
 
 
   public static void main(String[] args) throws IOException{
     BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
-    int N;
+    
     
     //Problem Set1: count8
-    /*N = Integer.parseInt(keyboard.readLine());
+    /*int N;
+    N = Integer.parseInt(keyboard.readLine());
     System.out.println(Recursion.count8(N));
     */
+
+/*
     //Problem Set2: pairStar
     String wordIn;
     wordIn = keyboard.readLine();
     System.out.println(Recursion.pairStar(wordIn));
+
+
+    //Problem Set3: stringClean
+    String wordIn;
+    wordIn = keyboard.readLine();
+    System.out.println(Recursion.stringClean(wordIn));
+*/
   }
 }
