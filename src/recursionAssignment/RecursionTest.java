@@ -21,16 +21,19 @@ public class RecursionTest{
     public void Test1(){
         // make assertion statement(s)
         assertEquals("helo", Recursion.stringClean("hello"));
+        assertEquals("hel*lo", Recursion.pairStar("hello"));
     }
     @Test
     public void Test2(){
         // make assertion statement(s)
         assertEquals( Recursion.stringClean("vaallaariie"),"valarie");
+        assertEquals("hi*i*i*i*i*i*i", Recursion.pairStar("hiiiiii"));
     }
     @Test
     public void Test3(){
         // make assertion statement(s)
         assertEquals("helo", Recursion.stringClean("helloo"));
+        assertEquals("ar*rived", Recursion.pairStar("arrived"));
     }
     
     @After

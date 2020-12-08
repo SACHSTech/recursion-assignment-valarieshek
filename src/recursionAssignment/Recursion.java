@@ -18,40 +18,9 @@ public class Recursion{
     }return 0;
   }
   
-    //Problem Set2: pairStar (final/complete)
-    //base code
-    public static String pairStar(String word) {
-    if ( word == null ) 
-    return word;
-    return tailReverse(word, ""); 
-    }
-    //recursion code
-    public static String tailReverse(String word, String res) {
- 	  //testing the deduction of word length
-    //System.out.println("Word Length is " + word.length());
- 	  //System.out.println("Word is " + word);
-
-     //res = word bank
- 	  if(word.equals("") )     
-     	// null is no String; "" is empty String
-     	return res;
- 	  else if (word.length() == 1) {
-     res = res + word.charAt(0);
-     return res;
- 	  }else
-   	  if (word.charAt(0) == word.charAt(1)){
-   		 	res = res + word.charAt(0)+"*";
-      	return tailReverse(word.substring(1, word.length()),res);
-       }else{
-       res  = res + word.charAt(0);
-       return tailReverse(word.substring(1, word.length()),res);
-       }
-  }
-
-
-
-  //1st try of set2: pairStar (failed/wrong)
-  /*public static String pairStar(String str){
+    
+  
+  public static String pairStar(String str){
     String Newstr;
     String strX;
     int wordCount = 0;
@@ -77,7 +46,7 @@ public class Recursion{
     }return str;
 
   }
-*/
+
   //Problem Set3: stringClean (finish/complete)
   public static String stringClean(String word){
     if ( word == null ) 
@@ -86,7 +55,6 @@ public class Recursion{
     }
     //recursion code
     public static String Reverse(String word, String res) {
-     
      //res = word bank
  	    if(word.equals("") )     
      	// null is no String; "" is empty String
@@ -103,7 +71,7 @@ public class Recursion{
        }
   }
 
-
+/*
   public static void main(String[] args) throws IOException{
     BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
     
@@ -125,6 +93,6 @@ public class Recursion{
     String wordIn;
     wordIn = keyboard.readLine();
     System.out.println(Recursion.stringClean(wordIn));
-*/
-  }
+
+  }*/
 }
