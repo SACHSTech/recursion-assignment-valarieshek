@@ -29,10 +29,6 @@ public class Recursion{
     }
     //recursion code
     public static String tailReverse(String word, String res) {
- 	  //testing the deduction of word length
-    System.out.println("Word Length is " + word.length());
- 	  System.out.println("Word is " + word);
-
      //res = word bank
  	  if(word.equals("") )     
      	// null is no String; "" is empty String
