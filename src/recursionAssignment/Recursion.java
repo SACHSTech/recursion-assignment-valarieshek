@@ -8,13 +8,10 @@ public class Recursion{
     int Num8;
     int intCount = 0;
     if(N > 1){
-      //finding remainder (last digit)
       Num8 = N%10;
       if(Num8 == 8){
-        //keeping track of how many 8s
         intCount = intCount +1;
       }
-      //eliminate last digit
       N = (N-Num8)/10;
       return intCount + count8(N);
     }else{
