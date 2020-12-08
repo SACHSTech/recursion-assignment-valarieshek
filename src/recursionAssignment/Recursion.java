@@ -86,9 +86,6 @@ public class Recursion{
     }
     //recursion code
     public static String Reverse(String word, String res) {
- 	  //testing the deduction of word length
-    System.out.println("Word Length is " + word.length());
- 	  System.out.println("Word is " + word);
      
      //res = word bank
  	    if(word.equals("") )     
