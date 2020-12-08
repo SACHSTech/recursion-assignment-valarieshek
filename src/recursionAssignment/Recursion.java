@@ -20,31 +20,34 @@ public class Recursion{
   
     
   
-  public static String pairStar(String str){
-    String Newstr;
-    String strX;
-    int wordCount = 0;
-    int intStr;
-    intStr = str.length() -2 ;
-    System.out.println("JJJJ"+intStr);
-    if(wordCount < intStr){
-      //str = str.substring(wordCount,wordCount +2);
-      if(str.substring(wordCount,wordCount +1).equalsIgnoreCase(str.substring(wordCount+1,wordCount +2))){
-        Newstr = str.substring(wordCount,wordCount +1)+"*";
-        System.out.println("io"+Newstr);
-      }else{
-        Newstr = str.substring(wordCount,wordCount +1);
-        System.out.println("hi"+Newstr);
-        
-      }
-      wordCount = wordCount +1;
-      System.out.println("wordcount"+wordCount);
-      return Newstr + pairStar(str);
+    //Problem Set2: pairStar (final/complete)
+    //base code
+    public static String pairStar(String word) {
+    if ( word == null ) 
+    return word;
+    return tailReverse(word, ""); 
+    }
+    //recursion code
+    public static String tailReverse(String word, String res) {
+ 	  //testing the deduction of word length
+    System.out.println("Word Length is " + word.length());
+ 	  System.out.println("Word is " + word);
 
-    }else{
-      //wordCount = 0;
-    }return str;
-
+     //res = word bank
+ 	  if(word.equals("") )     
+     	// null is no String; "" is empty String
+     	return res;
+ 	  else if (word.length() == 1) {
+     res = res + word.charAt(0);
+     return res;
+ 	  }else
+   	  if (word.charAt(0) == word.charAt(1)){
+   		 	res = res + word.charAt(0)+"*";
+      	return tailReverse(word.substring(1, word.length()),res);
+       }else{
+       res  = res + word.charAt(0);
+       return tailReverse(word.substring(1, word.length()),res);
+       }
   }
 
   //Problem Set3: stringClean (finish/complete)

@@ -27,7 +27,7 @@ public class RecursionTest{
     public void Test2(){
         // make assertion statement(s)
         assertEquals( Recursion.stringClean("vaallaariie"),"valarie");
-        assertEquals("hi*i*i*i*i*i*i", Recursion.pairStar("hiiiiii"));
+        assertEquals("hi*i*i*i*i*i", Recursion.pairStar("hiiiiii"));
     }
     @Test
     public void Test3(){
