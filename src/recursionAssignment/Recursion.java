@@ -8,14 +8,17 @@ public class Recursion{
     int Num8;
     int intCount = 0;
     if(N > 1){
+      //finding remainder (last digit)
       Num8 = N%10;
       if(Num8 == 8){
+        //keeping track of how many 8s
         intCount = intCount +1;
       }
+      //eliminate last digit
       N = (N-Num8)/10;
-      return intCount;
+      return intCount + count8(N);
     }else{
-    }return N;
+    }return 0;
   }
   
     
@@ -80,8 +83,6 @@ public class Recursion{
     N = Integer.parseInt(keyboard.readLine());
     System.out.println(Recursion.count8(N));
     
-
-/*
     //Problem Set2: pairStar
     String wordIn;
     wordIn = keyboard.readLine();
