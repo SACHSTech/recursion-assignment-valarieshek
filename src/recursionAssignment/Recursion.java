@@ -13,9 +13,9 @@ public class Recursion{
         intCount = intCount +1;
       }
       N = (N-Num8)/10;
-      return intCount + count8(N);
+      return intCount;
     }else{
-    }return 0;
+    }return N;
   }
   
     
