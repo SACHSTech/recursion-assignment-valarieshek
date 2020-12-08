@@ -87,9 +87,9 @@ public class Recursion{
     //recursion code
     public static String Reverse(String word, String res) {
  	  //testing the deduction of word length
-    System.out.println("Word Length is " + word.length());
- 	  System.out.println("Word is " + word);
-
+    //System.out.println("Word Length is " + word.length());
+ 	  //System.out.println("Word is " + word);¥
+     
      //res = word bank
  	    if(word.equals("") )     
      	// null is no String; "" is empty String
@@ -99,10 +99,10 @@ public class Recursion{
        return res;
  	    }else
    	    if (word.charAt(0) == word.charAt(1)){
-      	  return Reverse(word.substring(1, word.length()),res);
+      	  return Reverse(word.substring(1, word.length()),res+word.charAt(0));
          }else{
           res  = res + word.charAt(0);
-          return Reverse(word.substring(1, word.length()),res);
+          return Reverse(word.substring(1, word.length()),res+word.charAt(0));
        }
   }
 
@@ -112,10 +112,10 @@ public class Recursion{
     
     
     //Problem Set1: count8
-    /*int N;
+    int N;
     N = Integer.parseInt(keyboard.readLine());
     System.out.println(Recursion.count8(N));
-    */
+    
 
 /*
     //Problem Set2: pairStar
