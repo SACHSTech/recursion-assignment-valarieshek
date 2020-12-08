@@ -99,10 +99,10 @@ public class Recursion{
        return res;
  	    }else
    	    if (word.charAt(0) == word.charAt(1)){
-      	  return Reverse(word.substring(1, word.length()),res+word.charAt(0));
+      	  return Reverse(word.substring(1, word.length()),res);
          }else{
           res  = res + word.charAt(0);
-          return Reverse(word.substring(1, word.length()),res+word.charAt(0));
+          return Reverse(word.substring(1, word.length()),res);
        }
   }
 
